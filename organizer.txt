@@ -2,8 +2,7 @@ Hey I made a thing so we can see what each other are working on/planning
 Just a few notes for ourselves I guess
 
 ~~~~~~~~~~~~~~~~~~ Nick's List ~~~~~~~~~~~~~~~~~~
-[~] Add current weather conditions
-    - I would like to still add the current conditions (rainy/sunny)
+[x] Add current weather conditions
 [ ] Save To Do list changes to a JSON file
 
 ~~~~~~~~~~~~~~~~~~ Reina's List ~~~~~~~~~~~~~~~~~~
