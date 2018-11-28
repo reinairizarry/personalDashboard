@@ -3,7 +3,11 @@ var weather;
 
 function initApplication() {
   console.log("Initializing...");
+  setup();
+}
+function setup(){
   getWeather();
+  getTime();
 }
 function getWeather(){
   var xhr = new XMLHttpRequest();
@@ -13,15 +17,32 @@ function getWeather(){
       value = xhr.responseText;
       console.log("Collected weather info: " + value);
       weather = JSON.parse(value);
-      document.getElementById("currentTemp").innerHTML = currentTempGreeting(weather.main.temp);
+      document.getElementById("currentTemp").innerHTML = currentTempGreeting(weather);
+      return weather;
     }
   }
   xhr.open("GET",url);
   xhr.send();
 }
-function printTemp() {
-  console.log(weather.main.temp);
+function currentTempGreeting(object) {
+  var temp = object.main.temp;
+  var desc = object.weather[0].description;
+  var city = object.name;
+  return ("It is "+ temp + "&deg;F with " + desc + " in " + city);
 }
-function currentTempGreeting(temp) {
-  return ("Greetings! The weather is "+ temp + " degrees.");
-}
+function getTime() {
+  var greeting;
+  var today = new Date();
+  var currentHour = today.getHours();
+  if(currentHour>=23||currentHour<=3) {
+    greeting = "You're up late...";
+  } else if (currentHour > 3 && currentHour <11) {
+    greeting = "Good Morning!";
+  } else if (currentHour>=11 && currentHour <= 16) {
+    greeting = "Good Afternoon!";
+  } else {
+    greeting = "Good Evening!";
+  }
+  document.getElementById("greeting").innerHTML = greeting;
+  return today;
+ }
