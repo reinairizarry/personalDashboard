@@ -5,9 +5,8 @@
   $jsonString = file_get_contents('todo.json');
   $data = json_decode($jsonString,true);
   echo $data."\n";
-  // $arr = array('title' => $title);
-  // $newItem = json_encode($arr);
-  $data->setSize(sizeof($data)+1));
+  $arr = array('title' => $title);
+  $data[sizeof($data)+1)]=$arr;
   // $data[sizeof($data)-1]
   $newJsonString = json_encode($data);
   echo("New JSON file: ".$newJsonString."\n");
