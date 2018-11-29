@@ -1,4 +1,3 @@
-var url = "http://api.openweathermap.org/data/2.5/weather?q=Chicago&units=imperial&appid=3c59758cb4b64096ba0b4f377be9510b";
 var weather;
 
 function initApplication() {
@@ -6,10 +5,25 @@ function initApplication() {
   setup();
 }
 function setup(){
-  getWeather();
   getTime();
+  if(navigator.geolocation) {
+    var url;
+    navigator.geolocation.getCurrentPosition(makeURL);
+    function makeURL(obj) {
+      lat = obj.coords.latitude;
+      lng = obj.coords.longitude;
+      console.log("Lat: " + lat + "Long: " + lng);
+      url ="http://api.openweathermap.org/data/2.5/weather?lat="+lat.toFixed(4)+"&lon="+lng.toFixed(4)+"&units=imperial&appid=3c59758cb4b64096ba0b4f377be9510b";
+      console.log(url);
+      getWeather(url);
+    }
+  } else {
+    var url;
+    url = "http://api.openweathermap.org/data/2.5/weather?q=Chicago&units=imperial&appid=3c59758cb4b64096ba0b4f377be9510b";
+    getWeather(url);
+  }
 }
-function getWeather(){
+function getWeather(url){
   var xhr = new XMLHttpRequest();
   var value;
   xhr.onreadystatechange = function() {
