@@ -20,6 +20,7 @@ $("ul").on("click", "li span", function(event){
 			}
 		}
 	})
+	xhr.send();
 	$(this).remove();
 	event.stopPropagation();
 });
