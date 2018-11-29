@@ -7,8 +7,9 @@
   $size = sizeof($data);
   echo "Loaded $size items\n";
   for($i;$i<$size;$i++){
-    echo "Loaded ".$data[$i];
+    echo "Loaded ".$data[$i]."\n";
   }
+  $arr = array('title'=>$title);
   // $data[sizeof($data)-1]
   $newJsonString = json_encode($data);
   echo("New JSON file: ".$newJsonString."\n");
