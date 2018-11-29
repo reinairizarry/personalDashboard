@@ -1,27 +1,27 @@
 //Complete Todos by clicking
 $("ul").on("click", "li", function(){
 	$(this).toggleClass("completed");
-	var text = (this.innerHTML).split("</span>");
+	var text = (this.innerHTML).split("</span> ");
 	console.log("Crossing out " + text[1]);
 });
 
 //Delete todo when clicking X
 $("ul").on("click", "li span", function(event){
 	$(this).parent().fadeOut(500, function() {
-		var text = (this.innerHTML).split("</span>");
-		console.log("Deleting " + text[0]);
+		var text = (this.innerHTML).split("</span> ");
+		console.log("Deleting " + text[1]);
 		//pass text[1] to php
 		var xhr = new XMLHttpRequest();
-		xhr.open("GET","https://personal-dashboard.azurewebsites.net/deleteTodo.php?title="+text[0]);
-	  xhr.onreadystatechange = function() {
-	    if (xhr.readyState==4 && xhr.status==200) {
+		xhr.open("GET","https://personal-dashboard.azurewebsites.net/deleteTodo.php?title="+text[1]);
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState==4 && xhr.status==200) {
 				console.log("Connected to deleteTodo.php");
 				console.log(xhr.responseText);
 			}
 		}
+		xhr.send();
+		$(this).remove();
 	})
-	xhr.send();
-	$(this).remove();
 	event.stopPropagation();
 });
 
