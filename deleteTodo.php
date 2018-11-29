@@ -5,12 +5,12 @@
   //open and load JSON file
   $jsonString = file_get_contents('todo.json');
   $data = json_decode($jsonString,true);
-  echo("Loaded data length ".$data.length);
-  for($i=0;$i<$data.length;$i++){
+  echo("Loaded data length ".sizeof($data.length)."\n");
+  for($i=0;$i<sizeof($data);$i++){
     echo("Checking position".$i."\n");
     if($data[$i]['title']==$title) {
       echo("Found\n");
-      for($i;$i<$data.length-1;$i++){
+      for($i;$i<sizeof($data)-1;$i++){
         $data[$i]['title']=$data[$i+1]['title'];
       }
       //$data.length=$data.length-1;
