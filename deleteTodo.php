@@ -6,6 +6,7 @@
   $jsonString = file_get_contents('todo.json');
   $data = json_decode($jsonString,true);
   for($i=0;$i<$data.length;$i++){
+    echo("Checking position $i \n");
     if($data[$i]['title']==$title) {
       echo("Found\n");
       for($i;$i<$data.length-1;$i++){
