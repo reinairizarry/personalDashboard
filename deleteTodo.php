@@ -5,6 +5,7 @@
   //open and load JSON file
   $jsonString = file_get_contents('todo.json');
   $data = json_decode($jsonString,true);
+  echo("Loaded data length ".$data.length);
   for($i=0;$i<$data.length;$i++){
     echo("Checking position".$i."\n");
     if($data[$i]['title']==$title) {
