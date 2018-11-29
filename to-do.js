@@ -15,8 +15,11 @@ $("ul").on("click", "li span", function(event){
 		xhr.open("GET","https://personal-dashboard.azurewebsites.net/deleteTodo.php?title="+text[1]);
 	  xhr.onreadystatechange = function() {
 	    if (xhr.readyState==4 && xhr.status==200) {
-		$(this).remove();
+				console.log(xhr.responseText);
+			}
+		}
 	})
+	$(this).remove();
 	event.stopPropagation();
 });
 
