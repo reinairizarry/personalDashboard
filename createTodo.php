@@ -6,9 +6,6 @@
   echo $jsonString;
   $data = json_decode($jsonString,true);
   echo "Loaded $size items\n";
-  for($i;$i<$size;$i++){
-    echo "Loaded ".$data[$i]."\n";
-  }
   $arr = array('title'=>$title);
   $data += $arr;
   //array_pad($data,($size+1),$arr); <-doesnt seem to do anything
