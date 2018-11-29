@@ -9,12 +9,13 @@ $("ul").on("click", "li", function(){
 $("ul").on("click", "li span", function(event){
 	$(this).parent().fadeOut(500, function() {
 		var text = (this.innerHTML).split("</span>");
-		console.log("Deleting " + text[1]);
+		console.log("Deleting " + text[0]);
 		//pass text[1] to php
 		var xhr = new XMLHttpRequest();
-		xhr.open("GET","https://personal-dashboard.azurewebsites.net/deleteTodo.php?title="+text[1]);
+		xhr.open("GET","https://personal-dashboard.azurewebsites.net/deleteTodo.php?title="+text[0]);
 	  xhr.onreadystatechange = function() {
 	    if (xhr.readyState==4 && xhr.status==200) {
+				console.log("Connected to deleteTodo.php");
 				console.log(xhr.responseText);
 			}
 		}
