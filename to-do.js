@@ -27,12 +27,18 @@ $("input[type='text']").on("keypress", function(event) {
 
 function loadItems() {
 	var items = new Array();
+	var todoText;
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET","https://personal-dashboard.azurewebsites.net/todo.json");
   xhr.onreadystatechange = function() {
     if (xhr.readyState==4 && xhr.status==200) {
 			items = JSON.parse(xhr.responseText);
 			console.log("Loaded "+items.length+" items...");
+			//load item title into variable 'todoText'
+			for(i=0;i<items.length;i++) {
+				todoText = items[i].title;
+				$("ul").append("<li><span><i class='fas fa-trash-alt fa-sm'></i></span> " + todoText + "</li>");
+			}
 		}
 	}
 	xhr.send();
