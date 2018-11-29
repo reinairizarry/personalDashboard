@@ -1,5 +1,7 @@
 var weather;
-
+var imported = document.createElement('script');
+imported.src = 'to-do.js';
+document.head.appendChild(imported);
 function initApplication() {
   console.log("Initializing...");
   loadItems();
