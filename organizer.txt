@@ -3,7 +3,10 @@ Just a few notes for ourselves I guess
 
 ~~~~~~~~~~~~~~~~~~ Nick's List ~~~~~~~~~~~~~~~~~~
 [x] Add current weather conditions
-[ ] Save To Do list changes to a JSON file
+[~] Save To Do list changes to a JSON file
+  [x] Load items
+  [x] Delete items
+  [ ] Add items
 
 ~~~~~~~~~~~~~~~~~~ Reina's List ~~~~~~~~~~~~~~~~~~
 [x] Make the ToDo List

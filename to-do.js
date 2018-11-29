@@ -32,6 +32,15 @@ $("input[type='text']").on("keypress", function(event) {
 		var todoText = $(this).val();
 		$(this).val("");
 		$("ul").append("<li><span><i class='fas fa-trash-alt fa-sm'></i></span> " + todoText + "</li>");
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET","https://personal-dashboard.azurewebsites.net/createTodo.php?title="+text[1]);
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState==4 && xhr.status==200) {
+				console.log("Connected to createTodo.php");
+				console.log(xhr.responseText);
+			}
+		}
+		xhr.send();
 	}
 });
 
