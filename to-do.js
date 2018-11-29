@@ -10,6 +10,11 @@ $("ul").on("click", "li span", function(event){
 	$(this).parent().fadeOut(500, function() {
 		var text = (this.innerHTML).split("</span>");
 		console.log("Deleting " + text[1]);
+		//pass text[1] to php
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET","https://personal-dashboard.azurewebsites.net/deleteTodo.php?title="+text[1]);
+	  xhr.onreadystatechange = function() {
+	    if (xhr.readyState==4 && xhr.status==200) {
 		$(this).remove();
 	})
 	event.stopPropagation();
@@ -37,6 +42,7 @@ function loadItems() {
 			//load item title into variable 'todoText'
 			for(i=0;i<items.length;i++) {
 				todoText = items[i].title;
+				console.log("Adding item " + todoText);
 				$("ul").append("<li><span><i class='fas fa-trash-alt fa-sm'></i></span> " + todoText + "</li>");
 			}
 		}
