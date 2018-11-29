@@ -1,7 +1,7 @@
 <?php
   $target;
   $title = $_GET['title'];
-  echo("Received item to delete ".$title."<br>");
+  echo("Received item to delete ".$title."\n");
   //open and load JSON file
   $jsonString = file_get_contents('todo.json');
   $data = json_decode($jsonString,true);
@@ -11,9 +11,10 @@
         $data[$i]['title']=$data[$i+1]['title'];
       }
     } else {
-      echo("Did not find item <br>");
+      echo("Did not find item \n");
     }
   }
   $newJsonString = json_encode($data);
-  echo("New JSON file: ".$newJsonString."<br>");
+  echo("New JSON file: ".$newJsonString."\n");
+  file_put_contents('todo.json', $newJsonString);
 ?>
