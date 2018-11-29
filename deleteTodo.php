@@ -13,7 +13,7 @@
       for($i;$i<sizeof($data)-1;$i++){
         $data[$i]['title']=$data[$i+1]['title'];
       }
-      $data->setSize(sizeof($data)-1);
+      array_splice($data,sizeof($data)-1);
     } else {
       echo("Did not find item \n");
     }
