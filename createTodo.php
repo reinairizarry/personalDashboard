@@ -7,7 +7,7 @@
   echo $data."\n";
   // $arr = array('title' => $title);
   // $newItem = json_encode($arr);
-  $data = array_pad($data,sizeof($data)+1,'';
+  $data = array_pad($data,(sizeof($data)+1),'';
   // $data[sizeof($data)-1]
   $newJsonString = json_encode($data);
   echo("New JSON file: ".$newJsonString."\n");
