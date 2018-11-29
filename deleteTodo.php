@@ -1,4 +1,5 @@
 <?php
+  #nice
   $target;
   $title = $_GET['title'];
   echo("Received item to delete ".$title."\n");
