@@ -2,11 +2,12 @@ var weather;
 
 function initApplication() {
   console.log("Initializing...");
+  loadItems();
   setup();
 }
 function setup(){
   getTime();
-  if(navigator.geolocation) {
+  if(false/*navigator.geolocation*/) { //purposely triggering false repsonse, b/c geolocation is not working as expected
     var url;
     navigator.geolocation.getCurrentPosition(makeURL);
     function makeURL(obj) {
