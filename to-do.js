@@ -26,14 +26,14 @@ $("input[type='text']").on("keypress", function(event) {
 });
 
 function loadItems() {
-	var items;
+	var items = new Array();
 	var xhr = new XMLHttpRequest();
+	xhr.open("GET","https://personal-dashboard.azurewebsites.net/todo.json");
   xhr.onreadystatechange = function() {
     if (xhr.readyState==4 && xhr.status==200) {
 			items = JSON.parse(xhr.responseText);
 			console.log("Loaded "+items.length+" items...");
 		}
 	}
-	xhr.open("GET","https://personal-dashboard.azurewebsites.net/todo.json");
 	xhr.send();
 }
