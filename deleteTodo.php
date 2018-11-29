@@ -10,6 +10,7 @@
       for($i;$i<$data.length-1;$i++){
         $data[$i]['title']=$data[$i+1]['title'];
       }
+      $data.length=$data.length-1;
     } else {
       echo("Did not find item \n");
     }
