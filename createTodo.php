@@ -10,7 +10,7 @@
     echo "Loaded ".$data[$i]."\n";
   }
   $arr = array('title'=>$title);
-  // $data[sizeof($data)-1]
+  array_pad($data,($size+1),$arr);
   $newJsonString = json_encode($data);
   echo("New JSON file: ".$newJsonString."\n");
   file_put_contents('todo.json', $newJsonString);
