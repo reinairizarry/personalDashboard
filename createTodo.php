@@ -4,9 +4,10 @@
   //open and load JSON file
   $jsonString = file_get_contents('todo.json');
   $data = json_decode($jsonString,true);
-  echo $data."\n";
+  $size = sizeof($data);
+  echo "Loaded $size items\n";
   $arr = array('title' => $title);
-  $data[sizeof($data)+1)]=$arr;
+  //$data[sizeof($data)+1)]=$arr;
   // $data[sizeof($data)-1]
   $newJsonString = json_encode($data);
   echo("New JSON file: ".$newJsonString."\n");
