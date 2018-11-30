@@ -7,7 +7,7 @@ function initApplication() {
 }
 function setup(){
   getTime();
-  if(false/*navigator.geolocation*/) { //purposely triggering false repsonse, b/c geolocation is not working as expected
+  if(/*false*/navigator.geolocation) { //purposely triggering false repsonse, b/c geolocation is not working as expected
     var url;
     navigator.geolocation.getCurrentPosition(makeURL);
     function makeURL(obj) {
