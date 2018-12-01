@@ -10,7 +10,16 @@ Just a few notes for ourselves I guess
 
 ~~~~~~~~~~~~~~~~~~ Reina's List ~~~~~~~~~~~~~~~~~~
 [x] Make the ToDo List
+[ ] Make the site look good
+  [x] Dynamic background
+  [x] Add digital clock
+  [ ] create modal for to-do list
+  [ ] incorporate boostrap
+[x] Walked Michael
+ 
+
+
 
 ~~~~~~~~~~~~~~~~~~ Unassigned ~~~~~~~~~~~~~~~~~~
-[ ] Make the site look good
-[ ] Figure out how to use Calendar API
+
+
