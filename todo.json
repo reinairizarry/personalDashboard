@@ -1,14 +1,22 @@
 [
   {
-    "title":"Study for Final Test"
+    "title":"Study for Final Test",
+    "date":"12/8/18",
+    "note":""
   },
   {
-    "title":"Complete Database Lab"
+    "title":"Complete Database Lab",
+    "date":"12/3/18",
+    "note":"php exercises"
   },
   {
-    "title":"Complete Final Project"
+    "title":"Complete Final Project",
+    "date":"",
+    "note":"Web App using php,javascript,html,css"
   },
   {
-    "title":"Walk Michael"
+    "title":"Walk Michael",
+    "date":"",
+    "note":"Michael is a dog and, being an animal, has to go to the bathroom.  Among his favorite ways to do this and get some exercise, is going on a walk."
   }
 ]

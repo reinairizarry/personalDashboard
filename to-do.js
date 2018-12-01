@@ -1,8 +1,9 @@
+var toDoArray = new Array();
 //Complete Todos by clicking
 $("ul").on("click", "li", function(){
-	$(this).toggleClass("completed");
+	//$(this).toggleClass("completed");
 	var text = (this.innerHTML).split("</span> ");
-	console.log("Crossing out " + text[1]);
+	console.log(findItem(text[1]));
 });
 
 //Delete todo when clicking X
@@ -45,21 +46,31 @@ $("input[type='text']").on("keypress", function(event) {
 });
 
 function loadItems() {
-	var items = new Array();
 	var todoText;
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET","https://personal-dashboard.azurewebsites.net/todo.json");
   xhr.onreadystatechange = function() {
     if (xhr.readyState==4 && xhr.status==200) {
-			items = JSON.parse(xhr.responseText);
-			console.log("Loaded "+items.length+" items...");
+			toDoArray = JSON.parse(xhr.responseText);
+			console.log("Loaded "+toDoArray.length+" items...");
 			//load item title into variable 'todoText'
-			for(i=0;i<items.length;i++) {
-				todoText = items[i].title;
+			for(i=0;i<toDoArray.length;i++) {
+				todoText = toDoArray[i].title;
 				console.log("Adding item " + todoText);
 				$("ul").append("<li><span><i class='fas fa-trash-alt fa-sm'></i></span> " + todoText + "</li>");
 			}
 		}
 	}
 	xhr.send();
+}
+
+function findItem(text) {
+	var pos;
+	for(i=0;i<toDoArray.length;i++) {
+		item = toDoArray[i].title;
+		if(item==text){
+			return toDoArray[i];
+		}
+	}
+	return("Did not find item.");
 }
