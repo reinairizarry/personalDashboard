@@ -3,6 +3,7 @@ var toDoArray = new Array();
 $("ul").on("click", "li", function(){
 	//$(this).toggleClass("completed");
 	var text = (this.innerHTML).split("</span> ");
+	console.log(toDoArray.toString());
 	console.log(findItem(text[1]));
 });
 
@@ -43,6 +44,7 @@ $("input[type='text']").on("keypress", function(event) {
 		}
 		xhr.send();
 	}
+
 });
 
 function loadItems() {
@@ -62,6 +64,9 @@ function loadItems() {
 		}
 	}
 	xhr.send();
+	var newObj = JSON.parse('{"title":"'+todoText+'","date":"","note":""}');
+	toDoArray.push(newObj);
+	console.log(toDoArray.toString());
 }
 
 function findItem(text) {
@@ -73,4 +78,15 @@ function findItem(text) {
 		}
 	}
 	return("Did not find item.");
+}
+
+function updateItem(object){
+	object = JSON.stringify(object);
+	xhr.onreadystatechange = function() {
+    if (xhr.readyState==4 && xhr.status==200) {
+      console.log(xhr.responseText);
+    }
+  }
+  xhr.open("GET","https://personal-dashboard.azurewebsites.net/createTodo.php?object="+object);
+  xhr.send();
 }

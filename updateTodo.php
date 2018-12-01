@@ -1,7 +1,7 @@
 <?php
-  #nice
-  $title = $_GET['title'];
-  echo("Received item to delete ".$title."\n");
+  $object = $_GET['object']; //receives as string
+  $object = json_decode($object,true);//converts string to object
+  $title = $object['title'];
   //open and load JSON file
   $jsonString = file_get_contents('todo.json');
   $data = json_decode($jsonString,true);
@@ -10,10 +10,9 @@
     echo("Checking position".$i."\n");
     if($data[$i]['title']==$title) {
       echo("Found\n");
-      for($i;$i<sizeof($data)-1;$i++){
-        $data[$i]['title']=$data[$i+1]['title'];
-      }
-      array_splice($data,sizeof($data)-1);
+      echo("Updating item ".$data[$i]);
+      $data[$i]=$object;
+      echo(" as ".$object);
     } else {
       echo("Did not find item \n");
     }
