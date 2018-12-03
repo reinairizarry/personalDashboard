@@ -1,6 +1,9 @@
 html {
   font-family: Helvetica;
 }
+p {
+  text-align: center;
+}
 h2,h3 {
   text-align: center;
 }
@@ -61,11 +64,13 @@ h2,h3 {
   font-size: 100px;
 }
 body {
-	font-family: Roboto;
+  font-family: "Lato";
+   margin-top: 200px;
+   text-align: center;
+   color:white;
 }
 
 h1 {
-	background: #2980b9;
 	color: white;
 	margin: 0;
 	padding: 10px 20px;
