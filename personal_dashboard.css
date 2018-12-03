@@ -1,3 +1,9 @@
+body{
+  font-family: "Lato";
+  margin-top: 200px;
+  text-align: center;
+  color:black;
+}
 html {
   font-family: Helvetica;
 }
@@ -55,4 +61,8 @@ h1,h2,h3 {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+#clock{
+  font-weight:300px;
+  font-size: 100px;
 }
