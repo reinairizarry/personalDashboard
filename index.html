@@ -26,6 +26,22 @@
 			</div>
 
 			<script type="text/javascript" src="to-do.js"></script>
-</body>
 
+
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+			  <!-- Modal content -->
+        <div id="messageBox" class="modal-content"style="text-align:center;color:black;"></div>
+			  <div id = "modal-content" class="modal-content" style="color:black;">
+			    <span class="close">&times;</span>
+			  </div>
+        <div id="buttonContent" class="modal-content" style="text-align:center;">
+					<h4 id="todoTitle">Default Title</h4>
+					<label>Due Date: </label><input id="dueDate">Default Date</input><br><br>
+					<label>Note</label><br><textarea id="todoNote"rows="4" cols="50">Default Text</textarea><br>
+          <button id="close" class="button" onclick="closeModal()">Close</button>
+          <button id="save" class="button">Save</button>
+      </div>
+
+</body>
 </html>

@@ -1,9 +1,11 @@
 var weather;
+var modal;
 
 function initApplication() {
   console.log("Initializing...");
   loadItems();
   setup();
+  modal = document.getElementById("myModal");
 }
 function setup(){
   getTime();

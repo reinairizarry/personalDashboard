@@ -1,10 +1,13 @@
+
 var toDoArray = new Array();
 //Complete Todos by clicking
 $("ul").on("click", "li", function(){
 	//$(this).toggleClass("completed");
 	var text = (this.innerHTML).split("</span> ");
+	showModal(findItem(text[1]));
 	console.log(toDoArray.toString());
 	console.log(findItem(text[1]));
+
 });
 
 //Delete todo when clicking X
@@ -89,4 +92,27 @@ function updateItem(object){
   }
   xhr.open("GET","https://personal-dashboard.azurewebsites.net/createTodo.php?object="+object);
   xhr.send();
+}
+function showModal(object){
+	var date = document.getElementById("dueDate");
+	var title = document.getElementById("todoTitle");
+	var note = document.getElementById("todoNote");
+	date.value=object.date;
+	title.innerHTML=object.title;
+	note.innerHTML=object.note;
+	modal.style.display = "block";
+};
+function closeModal(){
+	modal.style.display = "none";
+}
+function saveChanges(){
+	var object;
+	var date = document.getElementById("dueDate").value;
+	var title = document.getElementById("todoTitle").innerHTML;
+	var note = document.getElementById("todoNote").innerHTML;
+	object=findItem(title);
+	object.date=date;
+	object.note=note;
+	updateItem(object);
+	closeModal();
 }
