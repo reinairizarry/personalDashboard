@@ -12,6 +12,7 @@ h2,h3 {
 }
 /* The Modal (background) */
 .modal {
+    color:black;
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -81,7 +82,7 @@ h1 {
 }
 
 ul {
-  text-align:left; 
+  text-align:left;
 	list-style: none;
 	margin: 0;
 	padding: 0;

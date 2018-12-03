@@ -106,15 +106,19 @@ function showModal(object){
 };
 function closeModal(){
 	modal.style.display = "none";
+	clearMessageBox();
 }
 function saveChanges(){
 	var object;
 	var date = document.getElementById("dueDate").value;
 	var title = document.getElementById("todoTitle").innerHTML;
 	var note = document.getElementById("todoNote").innerHTML;
+	document.getElementById("messageBox").innerHTML="Saved Changes!";
 	object=findItem(title);
 	object.date=date;
 	object.note=note;
 	updateItem(object);
-	
+}
+function clearMessageBox() {
+	document.getElementById("messageBox").innerHTML="";
 }
