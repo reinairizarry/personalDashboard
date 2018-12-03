@@ -14,7 +14,7 @@
       $data[$i]=$object;
       echo(" as ".$object);
     } else {
-      echo("Did not find item \n");
+      echo("Did not find item at $i\n");
     }
   }
   $newJsonString = json_encode($data);
