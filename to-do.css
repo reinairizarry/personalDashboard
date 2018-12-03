@@ -1,3 +1,4 @@
+/* condensed this all into personal_dashboard.css
 body {
 	font-family: Roboto;
 }
@@ -74,8 +75,4 @@ input:focus {
 	background: #f7f7f7;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1)
 }
-
-.completed {
-	text-decoration: line-through;
-	color: gray;
-}
+*/
