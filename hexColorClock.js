@@ -2,15 +2,13 @@
 
 // new date instead of date.now allows for get hour mins
 var clock = document.getElementById('clock');
-var hexColor = document.getElementById('hex-color');
 
 //hexclock gets current time, turn into hexcolor format, updates the content then changes the background color
 function hexClock() {
   var time = new Date();
   var hours = (time.getHours() % 12).toString();
-  var minutes = time.getMinutes().toString(); //get hoursd oesnt return length so use toString
-  var seconds = time.getSeconds().toString();
-
+  var minutes = time.getMinutes().toString(); //get hours doesnt return length so use toString
+  var clockStr = "";
   //changes the hex color format
   //#000000
   if (hours.length < 2) {
@@ -20,18 +18,10 @@ function hexClock() {
    if (minutes.length < 2) {
      hours = "0" + minutes;
    }
-
-  if (seconds.length < 2) {
-   seconds = '0' + seconds;
+var clockStr = hours + " : " + minutes;
+  if (clockStr != null){
+    clock.textContent = clockStr;
   }
-
-var clockStr = hours + " : " + minutes  + ' : ' + seconds;;
-var hexColorStr = "#" + hours + minutes + seconds;
-
-clock.textContent = clockStr;
-hexColor.textContent = hexColorStr;
-document.body.style.backgroundColor = hexColorStr;
-
 }
 hexClock();
 setInterval(hexClock, 1000); //changes color every second
