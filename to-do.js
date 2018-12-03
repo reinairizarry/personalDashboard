@@ -84,13 +84,15 @@ function findItem(text) {
 }
 
 function updateItem(object){
+	var xhr = new XMLHttpRequest();
 	object = JSON.stringify(object);
 	xhr.onreadystatechange = function() {
     if (xhr.readyState==4 && xhr.status==200) {
+			console.log("Connected to udpateTodo.php");
       console.log(xhr.responseText);
     }
   }
-  xhr.open("GET","https://personal-dashboard.azurewebsites.net/createTodo.php?object="+object);
+  xhr.open("GET","https://personal-dashboard.azurewebsites.net/updateTodo.php?object="+object);
   xhr.send();
 }
 function showModal(object){
@@ -114,5 +116,5 @@ function saveChanges(){
 	object.date=date;
 	object.note=note;
 	updateItem(object);
-	closeModal();
+	
 }
