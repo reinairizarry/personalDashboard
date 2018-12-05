@@ -101,7 +101,7 @@ function showModal(object){
 	var note = document.getElementById("todoNote");
 	date.value=object.date;
 	title.innerHTML=object.title;
-	note.innerHTML=object.note;
+	note.value=object.note;
 	modal.style.display = "block";
 };
 function closeModal(){
@@ -112,7 +112,7 @@ function saveChanges(){
 	var object;
 	var date = document.getElementById("dueDate").value;
 	var title = document.getElementById("todoTitle").innerHTML;
-	var note = document.getElementById("todoNote").innerHTML;
+	var note = document.getElementById("todoNote").value;
 	document.getElementById("messageBox").innerHTML="Saved Changes!";
 	object=findItem(title);
 	object.date=date;
